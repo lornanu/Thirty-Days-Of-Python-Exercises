@@ -100,48 +100,87 @@ def reverse_list(lst):
 print(reverse_list([1, 2, 3, 4, 5]))
 print(reverse_list(["A", "B", "C"])) 
 
-'''10. Declare a function named capitalize_list_items. It takes a list as a parameter and it returns a capitalized list of items
-11. Declare a function named add_item. It takes a list and an item parameters. It returns a list with the item added at the end.
+'''10. Declare a function named capitalize_list_items. It takes a list as a parameter and it returns a capitalized list of items'''
+def capitalize_list_items(lst):
+    capitalized_list = []
+    for item in lst:
+        capitalized_list.append(item.capitalize())
+    return capitalized_list
+print(capitalize_list_items(['apple','banana', 'pear']))
+    
+'''11. Declare a function named add_item. It takes a list and an item parameters. It returns a list with the item added at the end.'''
+def add_item(lst,item):
+    lst.append(item)
+    return lst
 
-```py
 food_stuff = ['Potato', 'Tomato', 'Mango', 'Milk'];
 print(add_item(food_stuff, 'Meat'))     # ['Potato', 'Tomato', 'Mango', 'Milk','Meat'];
 numbers = [2, 3, 7, 9];
 print(add_item(numbers, 5))      # [2, 3, 7, 9, 5]
 
-```
 
-12. Declare a function named remove_item. It takes a list and an item parameters. It returns a list with the item removed from it.
+'''12. Declare a function named remove_item. It takes a list and an item parameters. It returns a list with the item removed from it.'''
+def remove_item(lst,item):
+    lst.remove(item)
+    return lst
 
-```py
 food_stuff = ['Potato', 'Tomato', 'Mango', 'Milk']
 print(remove_item(food_stuff, 'Mango'))  # ['Potato', 'Tomato', 'Milk'];
 numbers = [2, 3, 7, 9]
 print(remove_item(numbers, 3))  # [2, 7, 9]
-```
 
-13. Declare a function named sum_of_numbers. It takes a number parameter and it adds all the numbers in that range.
 
-```py
+'''13. Declare a function named sum_of_numbers. It takes a number parameter and it adds all the numbers in that range.'''
+def sum_of_numbers(num):
+    counter = num
+    for i in range(num):
+        counter += i
+    return counter
+    
 print(sum_of_numbers(5))  # 15
 print(sum_of_numbers(10)) # 55
 print(sum_of_numbers(100)) # 5050
-```
 
-14. Declare a function named sum_of_odds. It takes a number parameter and it adds all the odd numbers in that range.
-15. Declare a function named sum_of_even. It takes a number parameter and it adds all the even numbers in that - range.
+'''14. Declare a function named sum_of_odds. It takes a number parameter and it adds all the odd numbers in that range.'''
+def sum_of_odds(num):
+    counter = 0
+    for i in range(num):
+        if i%2 !=0:
+           counter += i 
+    return counter
+
+print(sum_of_odds(5)) # 4
+
+
+'''15. Declare a function named sum_of_even. It takes a number parameter and it adds all the even numbers in that - range.'''
+def sum_of_even(num):
+    counter = 0
+    for i in range(num):
+        if i%2 ==0:
+           counter += i 
+    return counter
+
+print(sum_of_even(5)) # 6
 
 ### Exercises: Level 2
 
-1. Declare a function named evens_and_odds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
+'''1. Declare a function named evens_and_odds . It takes a positive integer as parameter and it counts number of evens and odds in the number.'''
+def evens_and_odds(num):
+    even_counter = 0
+    odd_counter = 0
+    for i in range(num + 1):
+        if i%2 == 0:
+            even_counter += 1
+        else:
+            odd_counter += 1
+    return f"The number of odds are {odd_counter}.\nThe number of evens are {even_counter}."
 
-```py
-    print(evens_and_odds(100))
-    # The number of odds are 50.
-    # The number of evens are 51.
-```
 
-1. Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
+print(evens_and_odds(100))
+# The number of odds are 50.
+# The number of evens are 51.
+
+'''1. Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
 1. Call your function _is_empty_, it takes a parameter and it checks if it is empty or not
 1. Write different functions which take lists. They should calculate_mean, calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std (standard deviation).
 1. Write a function called _greet_ which takes a default argument, _name_. If no argument is supplied it should print "Hello, Guest!", otherwise it should greet the person by name.
