@@ -163,6 +163,7 @@ def sum_of_even(num):
 print(sum_of_even(5)) # 6
 
 ### Exercises: Level 2
+print("Level 2")
 
 '''1. Declare a function named evens_and_odds . It takes a positive integer as parameter and it counts number of evens and odds in the number.'''
 def evens_and_odds(num):
@@ -180,18 +181,56 @@ print(evens_and_odds(100))
 # The number of odds are 50.
 # The number of evens are 51.
 
-'''1. Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
-1. Call your function _is_empty_, it takes a parameter and it checks if it is empty or not
-1. Write different functions which take lists. They should calculate_mean, calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std (standard deviation).
-1. Write a function called _greet_ which takes a default argument, _name_. If no argument is supplied it should print "Hello, Guest!", otherwise it should greet the person by name.
+'''2. Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
 
-```py
-    greet()
-    # "Hello, Guest!
-    greet("Alice")
-    # "Hello, Alice!"
-```
-1. Create a function called _show_args_ to take an arbitrary number of named arguments and print their names and values.
+3. Call your function _is_empty_, it takes a parameter and it checks if it is empty or not'''
+def is_empty(param = "EMPTY"):
+    if param == "EMPTY":
+        return "Parameter is empty"
+    else:
+        return "Parameter is not empty"
+
+print(is_empty())
+print(is_empty(2))
+print(is_empty("apples"))
+
+'''4. Write different functions which take lists. 
+They should calculate_mean, calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std.'''
+def calculate_mean(lst):
+    counter= 0
+    for i in lst:
+        counter += i
+    mean_num = counter/len(lst)
+    return mean_num
+    
+numlist = [5,3,1,2]
+print(calculate_mean(numlist))
+
+
+def calculate_median(lst):
+    sort_lst = sorted(lst)
+    n = len(sort_lst)
+    if len(sort_lst) %2 != 0:
+        return sort_lst[n//2]
+    else:
+        return (sort_lst[(n//2 )- 1] + sort_lst[n//2])/2
+
+
+print(calculate_median(numlist))
+lst = [5 , 3 ,1 ,3 ,5, 8, 9]
+print(calculate_median(lst))
+
+
+'''5. Write a function called _greet_ which takes a default argument, _name_. If no argument is supplied it should print "Hello, Guest!", otherwise it should greet the person by name.'''
+def greet(name="Guest"):
+    print(f"Hello, {name}!")
+
+greet()
+ # "Hello, Guest!
+greet("Alice")
+ # "Hello, Alice!"
+
+'''1. Create a function called _show_args_ to take an arbitrary number of named arguments and print their names and values.
    ```py
    show_args(name="Alice", age=30, city="New York")
    # Received: name: Alice, age: 30, city: New York
@@ -200,9 +239,9 @@ print(evens_and_odds(100))
    ```
 
 
-### Exercises: Level 3
-
-1. Write a function called is_prime, which checks if a number is prime.
+### Exercises: Level 3'''
+print("Level 3")
+'''1. Write a function called is_prime, which checks if a number is prime.
 1. Write a functions which checks if all items are unique in the list.
 1. Write a function which checks if all the items of the list are of the same data type.
 1. Write a function which check if provided variable is a valid python variable
