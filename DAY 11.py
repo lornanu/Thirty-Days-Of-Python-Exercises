@@ -231,13 +231,15 @@ greet("Alice")
  # "Hello, Alice!"
 
 '''1. Create a function called _show_args_ to take an arbitrary number of named arguments and print their names and values.
-   ```py
    show_args(name="Alice", age=30, city="New York")
    # Received: name: Alice, age: 30, city: New York
    show_args(name="Bob", pet="Fluffy, the bunny")
-   # Received: name: Bob, pet: Fluffy, the bunny
-   ```
+   # Received: name: Bob, pet: Fluffy, the bunny'''
 
+def show_args(**args):
+    return args
+
+print(show_args(name="Alice", age=30, city="New York"))
 
 ### Exercises: Level 3'''
 print("Level 3")
