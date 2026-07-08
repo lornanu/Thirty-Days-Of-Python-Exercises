@@ -152,9 +152,14 @@ print(get_last_ten_countries(countries))
 
 # Exercises: Level 3
 # Use the countries_data.py (https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries-data.py) file and follow the tasks below:
-import countries_data as c_data
+from countries_data import countries_data as c_data
 #1. Sort countries by name, by capital, by population
+countries_by_alpha = sorted(c_data, key=lambda x:x["name"])
+countries_by_capital = sorted(c_data, key=lambda x:x["capital"])
+countries_by_pop = sorted(c_data, key=lambda x:x["population"], reverse = True)
 
 #2. Sort out the ten most spoken languages by location.
 
+
 #3. Sort out the ten most populated countries.
+print(countries_by_pop[:10])
